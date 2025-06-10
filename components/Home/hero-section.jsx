@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import { v4 as uuidv4 } from "uuid";
 import ResumeUpload from "./ResumeUpload";
 import { useUser, SignInButton } from "@clerk/nextjs";

@@ -6,7 +6,7 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "../ui/dialog";
 import { Delete, File, Sparkles } from "lucide-react";
 import { Button } from "../ui/button";
 import { v4 as uuid } from "uuid";
