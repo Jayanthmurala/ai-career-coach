@@ -66,6 +66,7 @@
    ```
 5. **Open** `http://localhost:3000`
 6. **inngest** npx inngest-cli@latest dev -> - http://127.0.0.1:8288 (http://localhost:8288)
+7. **live** - https://ai-career-coach-hazel-three.vercel.app/
 
 ---
 
