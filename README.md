@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI Career Coach
+
+**AI Career Coach** is a web application that allows users to interact with an AI-powered career expert in real time. Built with Next.js (App Router), Clerk for authentication, Inngest for event-driven workflows, and LangChain/OpenAI for AI analysis, it provides:
+
+- **Conversational Interface**: Chat UI where users ask career-related questions.
+- **Chat History**: Persisted chat history per user and session.
+- **New Chat & Chat Management**: Generate new chat sessions and view past conversations.
+- **AI Processing Pipeline**: Uses Inngest functions to process and analyze messages asynchronously.
+- **Resume Analysis**: Upload PDF resumes, extract text, and analyze structure/content via AI.
+- **Authentication**: Clerk integration for secure sign-in/sign-out and protected routes.
+- **Code Review**:Paste your code to receive AI-driven feedback and best practices suggestions. .
+
+---
+
+## Features
+
+1. **Real-Time Chat**: Send messages to the AI agent and receive suggestions, advice, and tailored career guidance.
+2. **Persistent History**: All chats saved in MongoDB; users can revisit previous sessions.
+3. **Resume Upload & Analysis**: Upload PDF resumes to get a detailed JSON analysis (scores, feedback, improvement tips).
+4. **Code Review**: Paste your code to receive AI-driven feedback and best practices suggestions.
+5. **Dynamic Routing**: Each chat and review session has a unique URL (`/chat-agent/[chatId]`, `/code-review`).
+6. **Responsive Design**: Tailwind CSS for mobile-first, responsive layouts.
+7. **Secure Authentication**: Only authenticated users can access chat and review features; Clerk pop-up sign-in.
+
+---
+
+## Tech Stack
+
+- **Next.js** (App Router, Server & Client Components)
+- **React** & **Tailwind CSS** for UI
+- **Clerk** for authentication & user management
+- **Inngest** for serverless workflows and event-driven functions
+- **LangChain** & **OpenAI** (Gemini) for AI chat and resume analysis
+- **MongoDB** (via Mongoose) for persistence
+- **Axios** for API requests
+
+---
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**
+   ```bash
+   git clone <repo-url>
+   cd ai-irr
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Set environment variables** (`.env.local`):
+   ```txt
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+   CLERK_SECRET_KEY=
+   NEXT_PUBLIC_API_URL=http://localhost:3000
+   GOOGLE_GENAI_API_KEY=
+   INNGEST_SIGNING_KEY=local.dev
+   INNGEST_SERVER_HOST=http://127.0.0.1:8288
+   DATABASE_URL=
+   IMAGEKIT_PUBLIC_KEY=
+   IMAGEKIT_PRIVATE_KEY=
+   IMAGEKIT_URL_ENDPOINT=
+   ```
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+5. **Open** `http://localhost:3000`
+6. **inngest** npx inngest-cli@latest dev -> - http://127.0.0.1:8288 (http://localhost:8288)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Folder Structure
+
+```
+/app
+  /api
+    /ai-chat-agent      # API route for chat send
+    /chat-history       # Fetch saved chat history
+    /ai-resume-agent    # Handle resume upload & analysis
+    /inngest            # Inngest webhook endpoint
+  /chat-agent
+    /[chatId]
+      page.jsx          # Chat interface page
+  /resume-analyzer
+    /[resumeId]
+      page.jsx          # Resume analysis page
+/components
+  /ui                  # Button, Input, Dialog, etc.
+  /home                # HeroSection, FeatureGrid
+  /settings            # Account settings component
+/configs
+  aiChatSchema.js
+  aiResumeAnalyzer.js
+  userSchema.js
+  db.js                # MongoDB connection
+/inngest
+  functions.js         # Inngest functions definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Next Steps
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Add streaming responses for chat (real-time typing)
+- Integrate voice input/output for hands-free chat
+- Add chat summarization and topic segmentation
+- Implement rate limiting and usage quotas
+- Polish UI with animations (Framer Motion)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## UPComing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- AI Interview Agent With Feedback
+- DashBoard with progress Bars
+- Ai Resource and Cources
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+**Email** - jayanthmurala@1gamil.com
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**LinkedIn** - https://www.linkedin.com/in/jayanth-murala-0045b2281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Instagram**- @jayanthmurala\_
+
+© 2025 AI Career Coach. All rights reserved.
