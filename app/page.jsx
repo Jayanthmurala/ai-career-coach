@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight, FileText, Mic, PieChart } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
 import {
   Card,
   CardContent,
@@ -11,8 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import HeroSection from "@/components/home/hero-section";
-import FeatureGrid from "@/components/home/feature-grid";
+import HeroSection from "../components/home/hero-section";
+import FeatureGrid from "../components/home/feature-grid";
 import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
