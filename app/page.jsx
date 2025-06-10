@@ -10,8 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import HeroSection from "../components/home/hero-section";
-import FeatureGrid from "../components/home/feature-grid";
+import HeroSection from "../components/Home/HeroSection";
+import FeatureGrid from "../components/Home/FeatureGrid";
 import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
